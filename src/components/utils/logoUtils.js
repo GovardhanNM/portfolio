@@ -20,7 +20,7 @@ import firebase from "../../images/logos/firebase.svg";
 import git from "../../images/logos/git.svg";
 import github from "../../images/logos/github.svg";
 
-export default [
+const logos = [
     {
         image: cpp,
         title: "C++",
@@ -106,3 +106,4 @@ export default [
         title: "VS Code",
     },
 ];
+export default logos;
