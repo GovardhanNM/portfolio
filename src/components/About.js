@@ -105,7 +105,11 @@ function About() {
                 {logos.map((logo) => {
                     return (
                         <div key={logo.title}>
-                            <img src={logo.image} className={styles.logo} />
+                            <img
+                                src={logo.image}
+                                className={styles.logo}
+                                alt={logo.title}
+                            />
                             <p className={styles.techTitle}>{logo.title}</p>
                         </div>
                     );
