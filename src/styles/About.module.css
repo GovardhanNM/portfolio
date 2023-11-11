@@ -1,0 +1,67 @@
+.cardTitle {
+    font-weight: "bold";
+    text-align: center;
+    font-family: "Comic Sans MS";
+}
+
+.cardBody {
+    font-weight: "300";
+    text-align: center;
+    font-family: "Comic Sans MS";
+}
+
+.header {
+    font-weight: "bold";
+    text-align: center;
+    font-family: "Marker Felt";
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: white;
+    font-size: 1.2rem;
+    width: 75%;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Marker Felt";
+    margin-bottom: 3.5rem;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: "0 1rem";
+    transition: transform 0.25s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.marquee {
+    margin-top: 0.25rem;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.techHeader {
+    font-weight: "bold";
+    text-align: center;
+    font-family: "Marker Felt";
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.grid {
+    margin-bottom: 2rem;
+}
+
+.techTitle {
+    font-weight: "bold";
+    text-align: center;
+    font-family: "Comic Sans MS";
+    color: white;
+}

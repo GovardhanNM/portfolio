@@ -1,0 +1,25 @@
+.container {
+    overflow-y: auto;
+    height: 80%;
+    width: 80%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.date {
+    font-size: 3rem;
+    font-weight: 50px;
+    color: rgb(255, 255, 255);
+}
+
+.timelineTitle {
+    font-size: 1.5rem;
+    font-weight: 40px;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+}
