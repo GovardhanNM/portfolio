@@ -2,8 +2,8 @@ import React from "react";
 import useNav from "../hooks/useNav";
 import homePageImage from "../images/homepage.jpeg";
 import styles from "../styles/Home.module.css";
-import Button from "@mui/material/Button";
-import { Download } from "@mui/icons-material";
+// import Button from "@mui/material/Button";
+// import { Download } from "@mui/icons-material";
 
 function Home() {
     const homeRef = useNav("Home");
@@ -27,9 +27,9 @@ function Home() {
                 development. Eager to learn and contribute to the tech
                 community.
             </p>
-            <Button variant="contained" endIcon={<Download />} color="info">
+            {/* <Button variant="contained" endIcon={<Download />} color="info">
                 Download My Resume
-            </Button>
+            </Button> */}
         </section>
     );
 }

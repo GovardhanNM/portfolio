@@ -3,7 +3,7 @@ import styles from "../styles/NavigationBar.module.css";
 import { NavContext } from "../context/NavContext";
 
 const NavigationBar = () => {
-    const navLinks = ["Home", "About", "Experience", "Projects", "Contact"];
+    const navLinks = ["Home", "About", "Experience"];
     const { activeLinkId } = useContext(NavContext);
 
     const [color, setColor] = useState(false);
