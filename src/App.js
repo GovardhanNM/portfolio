@@ -15,8 +15,6 @@ function App() {
                 <Home />
                 <About />
                 <Experience />
-                <Projects />
-                <Contact />
             </NavProvider>
         </>
     );
