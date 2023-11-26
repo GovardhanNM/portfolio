@@ -1,31 +1,25 @@
 .cardTitle {
     font-weight: "bold";
     text-align: center;
-    font-family: "Comic Sans MS";
 }
 
 .cardBody {
     font-weight: "300";
     text-align: center;
-    font-family: "Comic Sans MS";
 }
 
 .header {
     font-weight: "bold";
     text-align: center;
     font-family: "Marker Felt";
-    color: white;
     margin-bottom: 1rem;
 }
 
 .description {
-    color: white;
     font-size: 1.2rem;
     width: 75%;
     text-align: center;
     font-weight: bold;
-    font-family: "Marker Felt";
-    margin-bottom: 3.5rem;
 }
 
 .logo {
@@ -39,9 +33,16 @@
     transform: scale(1.1);
 }
 
+.marqueeParent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .marquee {
     margin-top: 0.25rem;
-    width: 85%;
     display: flex;
     justify-content: space-between;
     height: 150px;
@@ -50,18 +51,25 @@
 .techHeader {
     font-weight: "bold";
     text-align: center;
-    font-family: "Marker Felt";
-    color: white;
     margin-bottom: 0.5rem;
+    margin-top: 2rem;
 }
 
 .grid {
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    row-gap: 1rem;
+    column-gap: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
 }
 
 .techTitle {
     font-weight: "bold";
     text-align: center;
-    font-family: "Comic Sans MS";
-    color: white;
+    margin-top: 1rem;
 }

@@ -1,15 +1,60 @@
 .textName {
-    color: white;
     font-weight: bold;
     font-family: "Courier New", Courier, monospace;
     text-align: center;
 }
 
 .textDescription {
-    color: white;
+    color: black;
     font-size: 1.4rem;
-    width: 75%;
+    width: 50%;
     text-align: center;
     font-weight: bold;
     font-family: "Courier New", Courier, monospace;
+}
+
+.textBody {
+    text-align: center;
+    width: 50%;
+    margin-right: 10rem;
+}
+
+.bodyContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+    .bodyContainer {
+        flex-direction: column;
+    }
+
+    .textBody {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .textDescription {
+        width: 100%;
+    }
+}
+
+.avatarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+
+.avatarIconButton {
+    height: 50px;
+    width: 50px;
 }

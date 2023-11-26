@@ -1,22 +1,17 @@
-import { useContext, useState } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { useContext } from "react";
 import styles from "../styles/NavigationBar.module.css";
 import { NavContext } from "../context/NavContext";
+import DarkModeToggle from "react-dark-mode-toggle";
+import Text from "./Text";
 
-const NavigationBar = () => {
-    const navLinks = ["Home", "About", "Experience"];
-    const { activeLinkId } = useContext(NavContext);
-
-    const [color, setColor] = useState(false);
-
-    const changeBackground = () => {
-        if (window.scrollY >= 200) {
-            setColor(true);
-        } else {
-            setColor(false);
-        }
-    };
-
-    window.addEventListener("scroll", changeBackground);
+function NavigationBar() {
+    const expand = "lg";
+    const navLinks = ["Home", "About", "Experience", "Projects"];
+    const { activeLinkId, isDarkMode, setIsDarkMode } = useContext(NavContext);
 
     const handleClickName = () => {
         document.getElementById("homeSection").scrollIntoView({
@@ -32,33 +27,71 @@ const NavigationBar = () => {
             });
         };
         return (
-            <ul key={link}>
-                <li>
-                    <button
-                        onClick={onLinkClick}
-                        className={
-                            activeLinkId === link ? styles.activeClass : ""
-                        }
-                    >
-                        {link}
-                    </button>
-                </li>
-            </ul>
+            <button
+                onClick={onLinkClick}
+                className={`${styles.navbutton} ${
+                    activeLinkId === link ? styles.activeClass : ""
+                }`}
+                key={link}
+            >
+                <Text>{link}</Text>
+            </button>
         );
     };
-
     return (
-        <header className={`${styles.header} ${color ? styles.headerBg : ""}`}>
-            <div className={styles.container}>
-                <div className={styles.navContainer}>
-                    <h1 onClick={handleClickName}>
+        <Navbar
+            key={expand}
+            expand={expand}
+            className={`${styles.header}`}
+            style={{
+                backgroundColor: isDarkMode ? "#38434f" : "aliceblue",
+                transition: "all 1s ease",
+            }}
+            variant={isDarkMode ? "dark" : "light"}
+        >
+            <Container fluid>
+                <Navbar.Brand
+                    onClick={handleClickName}
+                    className={styles.navbarName}
+                >
+                    <Text
+                        variant="h5"
+                        fontFamily="Courier New"
+                        fontWeight="bold"
+                    >
                         Govardhan Narasimha Murthy
-                    </h1>
-                    <nav>{navLinks.map(renderNavLink)}</nav>
-                </div>
-            </div>
-        </header>
+                    </Text>
+                </Navbar.Brand>
+                <Navbar.Toggle
+                    aria-controls={`offcanvasNavbar-expand-${expand}`}
+                />
+                <Navbar.Offcanvas
+                    id={`offcanvasNavbar-expand-${expand}`}
+                    aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+                    placement="end"
+                >
+                    <Offcanvas.Body
+                        style={{
+                            backgroundColor: isDarkMode
+                                ? "#38434f"
+                                : "aliceblue",
+                            transition: "all 1s ease",
+                        }}
+                    >
+                        <Nav className="justify-content-end flex-grow-1 pe-3">
+                            <DarkModeToggle
+                                onChange={setIsDarkMode}
+                                checked={isDarkMode}
+                                size={50}
+                                className={styles.darkModeToggle}
+                            />
+                            {navLinks.map(renderNavLink)}
+                        </Nav>
+                    </Offcanvas.Body>
+                </Navbar.Offcanvas>
+            </Container>
+        </Navbar>
     );
-};
+}
 
 export default NavigationBar;

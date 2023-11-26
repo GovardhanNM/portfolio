@@ -9,16 +9,13 @@ import php from "../../images/logos/php.svg";
 import bootstrap from "../../images/logos/bootstrap4.svg";
 import nodejs from "../../images/logos/nodejs.svg";
 import react from "../../images/logos/react.svg";
-import npm from "../../images/logos/npm.svg";
 import redux from "../../images/logos/redux.svg";
-import vs from "../../images/logos/vs.svg";
-import jira from "../../images/logos/jira.svg";
 import android from "../../images/logos/android.svg";
 import flutter from "../../images/logos/flutter.svg";
 import postman from "../../images/logos/postman.svg";
 import firebase from "../../images/logos/firebase.svg";
+import aws from "../../images/logos/aws.svg";
 import git from "../../images/logos/git.svg";
-import github from "../../images/logos/github.svg";
 
 const logos = [
     {
@@ -30,24 +27,16 @@ const logos = [
         title: "Python",
     },
     {
-        image: html,
-        title: "HTML",
-    },
-    {
-        image: css,
-        title: "CSS",
-    },
-    {
-        image: bootstrap,
-        title: "Bootstrap",
-    },
-    {
         image: js,
         title: "JS",
     },
     {
-        image: php,
-        title: "PHP",
+        image: aws,
+        title: "AWS",
+    },
+    {
+        image: firebase,
+        title: "Firebase",
     },
     {
         image: mySql,
@@ -70,12 +59,8 @@ const logos = [
         title: "NodeJS",
     },
     {
-        image: firebase,
-        title: "Firebase",
-    },
-    {
-        image: npm,
-        title: "NPM",
+        image: php,
+        title: "PHP",
     },
     {
         image: android,
@@ -86,24 +71,24 @@ const logos = [
         title: "Flutter",
     },
     {
+        image: html,
+        title: "HTML",
+    },
+    {
+        image: css,
+        title: "CSS",
+    },
+    {
+        image: bootstrap,
+        title: "Bootstrap",
+    },
+    {
         image: postman,
         title: "Postman",
     },
     {
         image: git,
         title: "Git",
-    },
-    {
-        image: github,
-        title: "GitHub",
-    },
-    {
-        image: jira,
-        title: "Jira",
-    },
-    {
-        image: vs,
-        title: "VS Code",
     },
 ];
 export default logos;

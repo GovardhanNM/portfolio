@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 import useNav from "../hooks/useNav";
-import aboutPageImage from "../images/aboutpage.jpeg";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -10,12 +9,15 @@ import Grid from "@mui/material/Grid";
 import fullstackImage from "../images/fullstack.jpeg";
 import uiuxImage from "../images/uiux.jpeg";
 import desktopImage from "../images/desktopdevelopment.jpeg";
+import cloudComputingImage from "../images/cloudComputingImage.jpeg";
 import styles from "../styles/About.module.css";
-import Marquee from "react-fast-marquee";
 import logos from "./utils/logoUtils";
+import { NavContext } from "../context/NavContext";
+import Text from "./Text";
 
 function About() {
     const aboutRef = useNav("About");
+    const { isDarkMode } = useContext(NavContext);
 
     const getGridCards = () => {
         return [
@@ -30,6 +32,12 @@ function About() {
                 title: "Desktop Development",
                 description:
                     "Experienced in building desktop applications using Qt-QML, a cross-platform C++ framework. Contributed to the open-source Cisco Adaptive Card Framework, a Qt-QML plugin.",
+            },
+            {
+                image: cloudComputingImage,
+                title: "Cloud Services",
+                description:
+                    "Experienced in Amazon Web Services and Google Firebase. Able to build and deploy scalable and user-friendly web, mobile and desktop applications using cloud services.",
             },
             {
                 image: uiuxImage,
@@ -62,6 +70,7 @@ function About() {
                                     variant="h5"
                                     component="div"
                                     className={styles.cardTitle}
+                                    fontFamily="Comic Sans MS"
                                 >
                                     {title}
                                 </Typography>
@@ -85,23 +94,38 @@ function About() {
             ref={aboutRef}
             id="aboutSection"
             style={{
-                backgroundImage: `url(${aboutPageImage})`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
+                backgroundColor: isDarkMode ? "#2e3440" : "#FFFBF5",
+                transition: "all 1s ease",
             }}
         >
-            <h1 className={styles.header}>About Me</h1>
-            <h2 className={styles.description}>
+            <Text
+                variant="h3"
+                className={styles.header}
+                fontFamily="Comic Sans MS"
+            >
+                About Me
+            </Text>
+            <Text
+                variant="h6"
+                className={styles.description}
+                fontFamily="Comic Sans MS"
+            >
                 Software Engineer with 2.5+ years of experience, passionate
                 about problem solving, competitive programming, and learning new
-                technologies to build real-world applications.
-            </h2>
-            <Grid container spacing={1} className={styles.grid}>
+                technologies to solve real-world applications. Some of my skills
+                are
+            </Text>
+            <div spacing={1} className={styles.grid}>
                 {getGridCards()}
-            </Grid>
-            <h1 className={styles.techHeader}>Tech Stack</h1>
-            <Marquee className={styles.marquee}>
+            </div>
+            <Text
+                variant="h3"
+                className={styles.techHeader}
+                fontFamily="Comic Sans MS"
+            >
+                Technologies
+            </Text>
+            <div className={styles.marqueeParent}>
                 {logos.map((logo) => {
                     return (
                         <div key={logo.title}>
@@ -110,11 +134,16 @@ function About() {
                                 className={styles.logo}
                                 alt={logo.title}
                             />
-                            <p className={styles.techTitle}>{logo.title}</p>
+                            <Text
+                                className={styles.techTitle}
+                                fontFamily="Comic Sans MS"
+                            >
+                                {logo.title}
+                            </Text>
                         </div>
                     );
                 })}
-            </Marquee>
+            </div>
         </section>
     );
 }

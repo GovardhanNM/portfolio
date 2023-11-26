@@ -23,3 +23,9 @@
     color: white;
     font-family: "Courier New", Courier, monospace;
 }
+
+.timelineDate {
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+}

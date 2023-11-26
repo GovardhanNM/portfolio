@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import useNav from "../hooks/useNav";
 import styles from "../styles/Experience.module.css";
 import {
@@ -7,11 +7,26 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { Work, School, Star } from "@mui/icons-material";
-import experiencePageImage from "../images/experience.jpeg";
+import Text from "./Text";
+import { NavContext } from "../context/NavContext";
+
+const getDateTag = (date) => {
+    return (
+        <Text
+            style={{
+                fontWeight: "bold",
+                marginTop: "auto",
+                marginBottom: "auto",
+            }}
+        >
+            {date}
+        </Text>
+    );
+};
 
 const experienceDetails = [
     {
-        date: "Aug 2023 - Present",
+        date: getDateTag("Aug 2023 - Present"),
         type: "education",
         title: "University of Colorado Boulder",
         location: "Boulder, CO",
@@ -30,7 +45,7 @@ const experienceDetails = [
         ),
     },
     {
-        date: "April 2023 - August 2023",
+        date: getDateTag("April 2023 - August 2023"),
         type: "work",
         title: "Software Engineer 2, Cisco",
         location: "Bengaluru, India",
@@ -50,7 +65,7 @@ const experienceDetails = [
         ),
     },
     {
-        date: "August 2021 - April 2023",
+        date: getDateTag("August 2021 - April 2023"),
         type: "work",
         title: "Software Engineer 1, Cisco",
         location: "Bengaluru, India",
@@ -72,7 +87,7 @@ const experienceDetails = [
         ),
     },
     {
-        date: "February 2021 - July 2023",
+        date: getDateTag("February 2021 - July 2023"),
         type: "work",
         title: "Software Engineer Intern, Cisco",
         location: "Bengaluru, India",
@@ -92,7 +107,7 @@ const experienceDetails = [
         ),
     },
     {
-        date: "August 2017 - July 2021",
+        date: getDateTag("August 2017 - July 2021"),
         type: "education",
         title: "R V College of Engineering",
         location: "Bengaluru, India",
@@ -121,7 +136,7 @@ const experienceDetails = [
 
 function Experience() {
     const experienceRef = useNav("Experience");
-
+    const { isDarkMode } = useContext(NavContext);
     const getTimelineElements = (detail, index) => {
         return (
             <VerticalTimelineElement
@@ -153,6 +168,7 @@ function Experience() {
                         : {}
                 }
                 icon={detail.type === "work" ? <Work /> : <School />}
+                key={index}
             >
                 <h3 className="vertical-timeline-element-title timelineTitle">
                     {detail.title}
@@ -160,7 +176,7 @@ function Experience() {
                 <h4 className="vertical-timeline-element-subtitle">
                     {detail.location}
                 </h4>
-                <p>{detail.descripition}</p>
+                {detail.descripition}
             </VerticalTimelineElement>
         );
     };
@@ -169,14 +185,15 @@ function Experience() {
         <section
             ref={experienceRef}
             id="experienceSection"
-            className="secondary-section"
             style={{
-                backgroundImage: `url(${experiencePageImage})`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
+                backgroundColor: isDarkMode ? "#332D2D" : "#f1ddcf",
+                transition: "all 1s ease",
+                gap: "2rem",
             }}
         >
+            <Text variant="h3" fontFamily="Comic Sans MS">
+                My Education and Expereince
+            </Text>
             <div className={styles.container}>
                 <VerticalTimeline>
                     {experienceDetails.map(getTimelineElements)}
