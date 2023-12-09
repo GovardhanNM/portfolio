@@ -8,14 +8,6 @@ import { Paper } from "@mui/material";
 
 const projectData = [
     {
-        title: "Portfolio Website",
-        description:
-            "Developed a responsive portfolio website using React, leveraging Material UI for styling and React Router for navigation. Implemented a dark mode toggle feature using React Context API and deployed the website on Netlify.",
-        techs: ["React", "JavaScript", "HTML", "CSS"],
-        image: "",
-        sourceCode: "https://github.com/GovardhanNM/portfolio",
-    },
-    {
         title: "Prototype for Museum Artefacts",
         description:
             "Developed a comprehensive backend website and Android prototype for the Central Silk Board Museum to facilitate artifact data management and user engagement. Implemented an admin portal for QR code generation and an Android app for QR code scanning and data retrieval.",
@@ -46,6 +38,14 @@ const projectData = [
         techs: ["JavaScript", "PHP", "MySQL", "HTML", "CSS"],
         image: "",
         sourceCode: "https://github.com/GovardhanNM/online_course",
+    },
+    {
+        title: "Portfolio Website",
+        description:
+            "Developed a responsive portfolio website using React, leveraging Material UI for styling and React Router for navigation. Implemented a dark mode toggle feature using React Context API and deployed the website on Netlify.",
+        techs: ["React", "JavaScript", "HTML", "CSS"],
+        image: "",
+        sourceCode: "https://github.com/GovardhanNM/portfolio",
     },
 ];
 
