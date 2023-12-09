@@ -72,7 +72,7 @@ function Projects() {
                         <Paper
                             key={project.title}
                             style={{
-                                padding: "15px",
+                                padding: "1rem",
                                 backgroundColor: `${
                                     isDarkMode ? "#132043" : "#F1EAFF"
                                 }`,
@@ -93,7 +93,6 @@ function Projects() {
                                     <Text
                                         fontFamily="Comic Sans MS"
                                         variant="h5"
-                                        width="100%"
                                     >
                                         {project.title}
                                     </Text>
@@ -115,6 +114,7 @@ function Projects() {
                                                         ? "#2196f3"
                                                         : "#03a9f4"
                                                 }`,
+                                                wordBreak: "break-all",
                                             }}
                                         >
                                             {project.sourceCode}

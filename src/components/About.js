@@ -56,7 +56,7 @@ function About() {
                     key={title}
                     style={{ opacity: 0.9 }}
                 >
-                    <Card sx={{ maxWidth: 345, maxHeight: 450 }}>
+                    <Card sx={{ maxWidth: 345 }}>
                         <CardActionArea>
                             <CardMedia
                                 component="img"
