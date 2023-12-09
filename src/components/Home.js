@@ -162,7 +162,7 @@ function Home() {
                             ></i>
                         </IconButton>
                     </div>
-                    <a href={Resume} download="Govardhan_Resume.pdf">
+                    <a href={Resume} target="_blank" rel="noreferrer">
                         <Button variant="contained" color="info">
                             Resume
                         </Button>
