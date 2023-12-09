@@ -29,3 +29,8 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+
+.experienceContainer {
+    height: 100vh;
+    padding: 3rem;
+}

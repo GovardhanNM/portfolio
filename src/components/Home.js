@@ -21,7 +21,6 @@ function Home() {
         <section
             ref={homeRef}
             id="homeSection"
-            className={styles.background}
             style={{
                 backgroundImage: `url(${
                     isDarkMode ? homePageImageDark : homePageImageLight
@@ -31,6 +30,7 @@ function Home() {
                 backgroundSize: "cover",
                 transition: "all 1s ease",
             }}
+            className={styles.homeContainer}
         >
             <div className={styles.bodyContainer}>
                 <img

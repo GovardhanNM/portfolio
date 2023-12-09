@@ -97,6 +97,7 @@ function About() {
                 backgroundColor: isDarkMode ? "#2e3440" : "#FFFBF5",
                 transition: "all 1s ease",
             }}
+            className={styles.aboutContainer}
         >
             <Text
                 variant="h3"

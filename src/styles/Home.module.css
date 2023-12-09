@@ -30,6 +30,7 @@
 @media (max-width: 1200px) {
     .bodyContainer {
         flex-direction: column;
+        height: auto;
     }
 
     .textBody {
@@ -39,6 +40,11 @@
 
     .textDescription {
         width: 100%;
+    }
+
+    .profileImage {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -57,4 +63,9 @@
 .avatarIconButton {
     height: 50px;
     width: 50px;
+}
+
+.homeContainer {
+    min-height: 100vh;
+    padding: 2rem;
 }

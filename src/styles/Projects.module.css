@@ -6,3 +6,8 @@
     gap: 2rem;
     margin-bottom: 2rem;
 }
+
+.projectsContainer {
+    min-height: 100vh;
+    padding: 5rem;
+}

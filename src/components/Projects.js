@@ -61,6 +61,7 @@ function Projects() {
                 transition: "all 1s ease",
                 gap: "2rem",
             }}
+            className={styles.projectsContainer}
         >
             <Text variant="h3" fontFamily="Comic Sans MS">
                 My Projects
@@ -92,12 +93,15 @@ function Projects() {
                                     <Text
                                         fontFamily="Comic Sans MS"
                                         variant="h5"
+                                        width="100%"
                                     >
                                         {project.title}
                                     </Text>
                                     <Text
                                         fontFamily="Comic Sans MS"
                                         variant="body"
+                                        width="100%"
+                                        padding="0.5rem 0"
                                     >
                                         {project.description}
                                     </Text>
@@ -117,7 +121,11 @@ function Projects() {
                                         </a>
                                     </Text>
                                     <div
-                                        style={{ display: "flex", gap: "1rem" }}
+                                        style={{
+                                            display: "flex",
+                                            gap: "1rem",
+                                            flexWrap: "wrap",
+                                        }}
                                     >
                                         {project.techs.map((tech) => {
                                             return (

@@ -190,6 +190,7 @@ function Experience() {
                 transition: "all 1s ease",
                 gap: "2rem",
             }}
+            className={styles.experienceContainer}
         >
             <Text variant="h3" fontFamily="Comic Sans MS">
                 My Education and Expereince
